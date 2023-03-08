@@ -1,0 +1,54 @@
+// Colors
+// -------------------------
+
+$black:          #000;
+$white:          #FFF;
+
+$pink: 			 #ff1ca0;
+
+$blue:           #49A7EB;
+$blue--dark:     #010c29;
+$blue--medium:   #484ab3;
+$blue--mid:      #0065F2;
+$blue--light:    #e3e9fd;
+$teal--dark: 		#007379;
+$purple--dark: #3A3042;
+$coral: #FF784F;
+
+$gray--light:    #e7e7e7;
+$gray--blue:    #858cad;
+$gray--dark:    #2e292a;
+
+$inactive:       #EFF1F7;
+
+$primary-color:    $pink;
+$secondary-color:  $teal--dark;
+$text-color:       #222222;
+
+$background--color: #b9a68045;
+
+$form-field: $inactive;
+
+$container: 1270px;
+$inner-container: 600px;
+$inner-container-large: 960px;
+
+// Breakpoint Sizes
+// -------------------------
+
+$breakpoints: (
+  small: 540px,
+  medium: 960px,
+  large: 1024px,
+  x-large: 1600px,
+  xx-large: 2800px,
+);
+
+// Fonts
+// -------------------------
+
+$font-family-serif: 'PT Serif', serif;
+$font-family-sans: 'Poppins', sans-serif;
+$font-family-display: 'Tilt Warp', cursive;
+
+$default-spacing: 1rem;

@@ -1,0 +1,26 @@
+.content_one-col{
+	&__container{
+		align-items: center;
+	}
+	&__inner{
+		// @include boxed-content();
+	}
+	&__subheading{
+		h5{
+			color: pink;
+			// color: $primary-color;
+		}
+	}
+	&__heading{
+	//	max-width: 2rem;
+	}
+	&__text{
+		margin-top: 1rem;
+		p{
+		}
+	}
+	.actions{
+		margin-top: 2rem;
+		align-items: center;
+	}
+}
