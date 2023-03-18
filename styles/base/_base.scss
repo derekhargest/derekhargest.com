@@ -2,7 +2,12 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	background-color: #fff;
+	background-color: $background--color;
+	color: $text-color;
+}
+
+li{
+	list-style: none;
 }
 
 .content-page .component > .container{

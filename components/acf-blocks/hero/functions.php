@@ -8,18 +8,18 @@
 /**
  * Registers the block.
  */
-function gl_content_one_col_block() {
+function gl_content_hero() {
 	if ( function_exists( 'acf_register_block_type' ) ) {
 		$settings                    = array(
-			'name'        => 'content_one-col',
-			'title'       => __( 'Content - One Column', 'groundlevel' ),
-			'description' => __( 'Displays a content block with one column.', 'groundlevel' ),
+			'name'        => 'hero',
+			'title'       => __( 'Hero', 'groundlevel' ),
+			'description' => __( 'Displays a Hero section.', 'groundlevel' ),
 			'category'    => 'content',
 			'icon'        => array(
 				'foreground' => '#ff1ca0',
-				'src'        => 'text',
+				'src'        => 'id',
 			),
-			'keywords'    => array( 'Content', 'One Column' ),
+			'keywords'    => array( 'Content', 'Hero' ),
 			'mode'        => 'auto',
 			'supports'    => array(
 				'align'    => false,
@@ -30,8 +30,8 @@ function gl_content_one_col_block() {
 		);
 		$settings['render_template'] = gl_block_render_template_assets( $settings['name'], $settings['name'] );
 		acf_register_block_type( $settings );
-		// renderComponentScripts( $settings['name'] );
+		//renderComponentScripts( $settings['name'] );
 
 	}
 }
-add_action( 'acf/init', 'gl_content_one_col_block' );
+add_action( 'acf/init', 'gl_content_hero' );

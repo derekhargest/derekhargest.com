@@ -1,15 +1,15 @@
 html{
-    font-size: 62.5%;
-    line-height: 1.7;
+    font-size: 100%;
+	line-height: $line-height;
 }   
 
 body{
-	font-family: $font-family-serif;
+	font-family: $font-family-sans;
 }
 
 p{
-    font-size: 2rem;
-	line-height: 1.5;
+    font-size: 1rem;
+	line-height: $line-height;
 }
 
 a{
@@ -18,7 +18,7 @@ a{
 
 h1, h2, h3{
 	font-family: $font-family-display;
-    line-height: 1.15;
+    line-height: $line-height;
 	font-weight: 700;
 }
 

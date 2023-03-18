@@ -23,9 +23,9 @@ $inactive:       #EFF1F7;
 
 $primary-color:    $pink;
 $secondary-color:  $teal--dark;
-$text-color:       #222222;
+$text-color:       $black;	
 
-$background--color: #b9a68045;
+$background--color: $white;
 
 $form-field: $inactive;
 
@@ -49,6 +49,16 @@ $breakpoints: (
 
 $font-family-serif: 'PT Serif', serif;
 $font-family-sans: 'Poppins', sans-serif;
-$font-family-display: 'Tilt Warp', cursive;
+$font-family-display: 'Noto Serif Lao', serif;
+
+$line-height: 1.4;
+
+// 
+
+// Font Sizes
+// -------------------------
+
+
+// Spacing
 
 $default-spacing: 1rem;

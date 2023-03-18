@@ -1,0 +1,17 @@
+.site-header__navigation{
+	ul{
+		display: flex;
+		list-style: none;
+		li{
+			list-style: none;
+			padding: 1rem 2rem;
+			a{
+				font-size: 1.6rem;
+				font-weight: 400;
+				text-decoration: none;
+				font-family: $font-family-display;
+				color: $text-color;
+			}
+		}
+	}
+}

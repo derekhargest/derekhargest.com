@@ -1,0 +1,38 @@
+.actions{
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: row;
+	.button{
+		&:first-child{
+			margin-left: 0
+		}
+	}
+}
+
+.button{
+	background-color: $text-color;
+	color: $white;
+	text-decoration: none;
+	font-size: 1.25rem;
+	padding: .75rem 1.5rem;
+	border-radius: 900rem;
+	margin: 0 .4rem;
+	font-weight: 600;
+	position: relative;
+	display: flex;
+	align-items: center;
+	&:after{
+		display: none;
+		content: "\f105";
+		font-family: "Font Awesome 5 Free"; 
+		font-weight: 900;
+	}
+	svg{
+		font-size: 1.25rem;
+		margin-left: .5rem;
+	}
+	&.button--secondary{
+		background-color: transparent;
+		color: $text-color;
+	}
+}
