@@ -23,7 +23,7 @@ jobs:
     
     - name: Sync
       env:
-        dest: 'derek@derekhargest.com:/var/www/wp-content/themes/groundlevel'
+        dest: 'derek@derekhargest.com:~/var/www/wp-content/themes/groundlevel'
       run: |
         echo "${{secrets.DEPLOY_KEY}}" > deploy_key
         chmod 600 ./deploy_key
