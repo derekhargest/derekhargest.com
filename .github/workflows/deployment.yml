@@ -1,4 +1,4 @@
-name: Deploy to Raspberry Pi
+name: Deploy
 
 on:
   push:
@@ -8,29 +8,26 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
+    - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Deploy to Raspberry Pi
-      uses: appleboy/ssh-action@master
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y nodejs npm
+        npm install
+
+    - name: Build
+      run: |
+        cd wp-content/themes/groundlevel
+        npm run build
+
+    - name: Deploy
+      uses: appleboy/ssh-action@v0.3.0
       with:
-        host: ${{ secrets.RASPBERRY_PI_IP }}
-        username: ${{ secrets.RASPBERRY_PI_USERNAME }}
-        key: ${{ secrets.RASPBERRY_PI_PRIVATE_KEY }}
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
         script: |
-          cd /var/www/wp-content/themes/groundlevel
-          git fetch --all
-          git reset --hard origin/main
-          # Install Node.js if needed
-          if ! command -v node &> /dev/null; then
-            curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-            sudo apt-get install -y nodejs
-          fi
-          # Install project dependencies
-          npm ci
-          # Build the project for production
-          npm run prod
-          # Restart Apache (if necessary)
-          sudo systemctl restart apache2
+          sudo rsync -avz --delete --exclude '.git*' --exclude 'node_modules' ${{ github.workspace }}/wp-content/themes/groundlevel/ /var/www/html/wp-content/themes/groundlevel/
