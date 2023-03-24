@@ -26,6 +26,6 @@ jobs:
         host: ${{ secrets.RASPBERRY_PI_HOST }}
         username: ${{ secrets.RASPBERRY_PI_USERNAME }}
         password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
-        source: "/"
+        source: "./"
         target: "/var/www/wp-content/themes/groundlevel/"
         debug: true
