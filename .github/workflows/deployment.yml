@@ -1,4 +1,4 @@
-name: Deploy
+name: CI/CD Pipeline
 
 on:
   push:
@@ -6,28 +6,29 @@ on:
       - main
 
 jobs:
-  deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout
+    - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install Dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y nodejs npm
-        npm install
-
-    - name: Build
-      run: |
-        cd wp-content/themes/groundlevel
-        npm run build
-
-    - name: Deploy
-      uses: appleboy/ssh-action@v0.3.0
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        script: |
-          sudo rsync -avz --delete --exclude '.git*' --exclude 'node_modules' ${{ github.workspace }}/wp-content/themes/groundlevel/ /var/www/html/wp-content/themes/groundlevel/
+        node-version: '15'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build production assets
+      run: npm run prod
+
+    - name: Deploy to Raspberry Pi
+      uses: appleboy/scp-action@v0.1.1
+      with:
+        host: ${{ secrets.RASPBERRY_PI_HOST }}
+        username: ${{ secrets.RASPBERRY_PI_USERNAME }}
+        password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
+        source: "wp-content/themes/groundlevel/"
+        target: "/var/www/wp-content/themes/groundlevel/"
