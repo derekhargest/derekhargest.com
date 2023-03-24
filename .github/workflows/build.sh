@@ -1,18 +1,27 @@
-set -e
+name: CI/CD Pipeline
 
-echo "Installing NVM"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-echo "Load Bash Completion"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+on:
+  push:
+    branches:
+      - main
 
-echo "Install and Use NVM 15"
-nvm install 15
-nvm use 15
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
 
-echo "Initiating NPM Install"
-npm install
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-echo "Building Theme"
-npm run prod
+    - name: Build Dependencies
+      run: |
+          chmod +x .github/workflows/build.sh
+          .github/workflows/build.sh
+
+    - name: Install sshpass
+      run: sudo apt-get install -y sshpass
+
+    - name: Deploy to Raspberry Pi
+      run: |
+        sshpass -p ${{ secrets.RASPBERRY_PI_PASSWORD }} rsync -avz --delete --progress ./ ${{
+          secrets.RASPBERRY_PI_USERNAME }}@${{ secrets.RASPBERRY_PI_HOST }}:/var/www/wp-content/themes/groundlevel/
