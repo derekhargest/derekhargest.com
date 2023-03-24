@@ -14,14 +14,18 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build Dependencies
-      run: |
+      run:
+          #Update Build Script Permissions and run Build Script 
+          |
           chmod +x .github/workflows/build.sh
           .github/workflows/build.sh
 
-    - name: Install sshpass
-      run: sudo apt-get install -y sshpass
-
     - name: Deploy to Raspberry Pi
-      run: |
-        sshpass -p ${{ secrets.RASPBERRY_PI_PASSWORD }} rsync -avz --delete --progress ./ ${{
-          secrets.RASPBERRY_PI_USERNAME }}@${{ secrets.RASPBERRY_PI_HOST }}:/var/www/wp-content/themes/groundlevel/
+      uses: appleboy/scp-action@v0.1.1
+      with:
+        host: ${{ secrets.RASPBERRY_PI_HOST }}
+        username: ${{ secrets.RASPBERRY_PI_USERNAME }}
+        password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
+        source: "./"
+        target: "/var/www/wp-content/themes/groundlevel/"
+        debug: true
