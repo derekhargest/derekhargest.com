@@ -1,7 +1,7 @@
 // Colors
 // -------------------------
 
-$black:          #000;
+$black:          #212427;
 $white:          #FFF;
 
 $pink: 			 #ff1ca0;
@@ -12,10 +12,12 @@ $blue--medium:   #484ab3;
 $blue--mid:      #0065F2;
 $blue--light:    #e3e9fd;
 $teal--dark: 		#007379;
-$purple--dark: #3A3042;
+$purple--dark: #311551;
+$purple--light: #efe2ff;
 $coral: #FF784F;
+$green: #6dda01;
 
-$gray--light:    #e7e7e7;
+$gray--light:    #dedede;
 $gray--blue:    #858cad;
 $gray--dark:    #2e292a;
 
@@ -39,7 +41,7 @@ $inner-container-large: 960px;
 $breakpoints: (
   small: 540px,
   medium: 960px,
-  large: 1024px,
+  large: 1060px,
   x-large: 1600px,
   xx-large: 2800px,
 );
@@ -47,7 +49,7 @@ $breakpoints: (
 // Fonts
 // -------------------------
 
-$font-family-serif: 'PT Serif', serif;
+$font-family-serif: 'Lora', serif;
 $font-family-sans: 'Poppins', sans-serif;
 $font-family-display: 'Noto Serif Lao', serif;
 
@@ -62,3 +64,5 @@ $line-height: 1.4;
 // Spacing
 
 $default-spacing: 1rem;
+
+@import 'mixins';

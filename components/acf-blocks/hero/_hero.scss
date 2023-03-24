@@ -1,4 +1,6 @@
 .hero{
+	min-height: 100vh;
+	display: flex;
 	&__container{
 		display: flex;
 		flex-direction: column;
@@ -6,38 +8,80 @@
 		justify-content: center;
 	}
 	&__content{
-		padding: 12rem 0;
 		max-width: 76rem;
 		h1{
-			font-size: 5rem;
+			font-size: 3rem;
 			letter-spacing: -.05em;
 			font-weight: 600;
 			color: $pink;
 			font-family: $font-family-sans;
 			line-height: 1;
+			margin-bottom: 1rem;
+			@media screen and (min-width: 740px) {
+				font-size: 5rem;
+			}
 			span{
 				color: $text-color;
 			}
 		}
 	}
 	&__title{
+		max-width: 38rem;
+		order: 2;
+		@media screen and (min-width: 1061px) {
+			order: 1;
+		}
 		.actions{
 			margin-top: 2rem;
+			flex-direction: column;
+			align-items: center;
+			@media screen and (min-width: 1061px) {
+				flex-direction: row;
+			}
 		}
 	}
 	&__title_image{
 		display: flex;
-		flex-direction: row;
-		align-items: center;
+		flex-direction: column;
 		justify-content: space-between;
+		@media screen and (min-width: 1061px) {
+			flex-direction: row;
+		  }
 	}
 	&__image{
-		margin-left: 4rem;
+		order: 1;
+		margin-bottom: 2rem;
+		position: relative;
+		@media screen and (min-width: 1061px) {
+			order: 2;
+			margin-bottom: 0;
+		}
+		&:hover .corner{
+				opacity: 1;
+				transform: rotate(0deg) translateY(0%);
+		}
 		img{
 			width: 100%;
 			border-radius: 50%;
-			width: 20rem;
-			height: 20rem;
+			width: 16rem;
+			height: 16rem;
+			box-shadow: .85rem .85rem 0px #ff1ca0;
+			@media screen and (min-width: 1061px) {
+				width: 20rem;
+				height: 20rem;
+			}
 		}
+		.corner {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 0;
+			height: 0;
+			border-top: 50px solid transparent;
+			border-right: 50px solid white;
+			transform: rotate(45deg) translateY(-50%);
+			opacity: 1;
+			transition: opacity 0.3s, transform 0.3s;
+		  }
 	}
 }

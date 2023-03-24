@@ -1,0 +1,23 @@
+.section-heading{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: 1rem;
+		h2{
+			font-size: 3rem;
+			letter-spacing: -.05em;
+			display: flex;
+			font-weight: 600;
+			align-items: center;
+    		top: 1rem
+		}
+		svg{
+			font-size: 4rem;
+			margin-left: .5rem;
+			transform: rotate(-20deg);
+			color: $pink;
+			display: none;
+			// color: $pink;
+			// filter: drop-shadow(3px 5px 5px rgb(150 0 87 / 1.0));
+		}
+}

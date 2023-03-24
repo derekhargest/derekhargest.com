@@ -1,0 +1,30 @@
+.accordion{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	background: $gray--light;
+	padding: 6rem 0;
+	&__container{
+		justify-content: center;
+	}
+	&__accordion{
+		position: absolute;
+		right: 0;
+		width: 100%;
+		max-width: 36rem;
+	}
+	&-button{
+		&:hover{
+			background-color: #eae8ee;
+		}
+	}
+	&__intro{
+		width: 37%;
+	}
+	&-item{
+		margin-bottom: .5rem;
+	}
+	.accordion-button{
+		border-bottom: .25rem solid $purple--dark;
+	}
+}

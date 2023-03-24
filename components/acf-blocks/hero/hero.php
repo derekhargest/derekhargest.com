@@ -16,6 +16,9 @@ $hero_buttons = get_field('hero_buttons');
 					<h1>
 						<?php echo wp_kses_post($hero_heading) ?>
 					</h1>
+					<p>
+						<?php echo esc_html($hero_text) ?>
+					</p>
 					<?php
 					if ($hero_buttons): ?>
 						<div class="actions">
@@ -48,9 +51,6 @@ $hero_buttons = get_field('hero_buttons');
 					</div>
 				<?php endif; ?>
 			</div>
-			<!-- <p>
-				<?php echo esc_html($hero_text) ?>
-			</p> -->
 		</div>
 	</div>
 </div>

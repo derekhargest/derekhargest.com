@@ -1,3 +1,7 @@
+html{
+	scroll-behavior: smooth;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -10,6 +14,34 @@ li{
 	list-style: none;
 }
 
+section.site-section{
+	position: relative;
+}
+
 .content-page .component > .container{
 	padding: 0;
+}
+
+.hentry{
+	scroll-snap-type: y mandatory;
+	scroll-behavior: smooth;
+	height: 100vh;
+	overflow-y: scroll;
+	& > .component{
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+	}
+}
+
+.hentry{
+	p{
+		margin-bottom: 1rem;
+	}
+}
+
+.component{
+	padding: 3rem 0;
+	@media screen and (min-width: 1061px) {
+		padding: 6rem 0;
+	}
 }

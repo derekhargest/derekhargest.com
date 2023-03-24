@@ -38,7 +38,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="site-header">
+	<!-- <div class="site-header">
 		<div class="container site-header__container">
 			<div class="site-header__inner">
 				<div class="site-header__logo">
@@ -46,7 +46,7 @@
 						<?php get_template_part('template-parts/header', 'logo'); ?>
 					</a>
 				</div>
-				<div class="site-header__navigation">
+				<!-- <div class="site-header__navigation">
 				<?php
 					wp_nav_menu(
 						array(
@@ -62,4 +62,5 @@
 			</div>
 		</div>
 	</div>
+				-->
 				

@@ -4,7 +4,7 @@
 
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const cssnano = require("cssnano"); // https://cssnano.co/
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
@@ -15,6 +15,8 @@ const glob_entries = require("webpack-glob-folder-entries");
 const component_entries = glob_entries("components/**/index.js", true);
 const fs = require("fs");
 const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts");
+const webpack = require("webpack");
+const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
 // JS Directory path.
 const JS_DIR = path.resolve(__dirname, "js");
@@ -54,6 +56,11 @@ for (const [key, value] of Object.entries(component_entries)) {
  * Note: argv.mode will return 'development' or 'production'.
  */
 const plugins = (argv) => [
+	new webpack.ProvidePlugin({
+		$: require.resolve('jquery'),
+		jQuery: require.resolve('jquery'),
+		'window.jQuery': require.resolve('jquery'),
+		}),
   new CleanWebpackPlugin({
     cleanStaleWebpackAssets: "production" === argv.mode // Automatically remove all unused webpack assets on rebuild, when set to true in production. ( https://www.npmjs.com/package/clean-webpack-plugin#options-and-defaults-optional )
   }),
@@ -112,7 +119,10 @@ const rules = [
 	  use: [MiniCssExtractPlugin.loader, "css-loader", {
 		  loader: "sass-loader",
 		  options: {
-			  additionalData: `@import "styles/utilities/_variables.scss";`
+			  additionalData: `@import "styles/utilities/_variables.scss";`,
+			  sassOptions: {
+                includePaths: [nodeModulesPath],
+              }
 		  },
 	  }],
   },
@@ -152,21 +162,10 @@ module.exports = (env, argv) => ({
 
   optimization: {
     minimizer: [
-      new OptimizeCssAssetsPlugin({
-        cssProcessor: cssnano
-      }),
-
-      new UglifyJsPlugin({
-        cache: false,
-        parallel: true,
-        sourceMap: false
-      })
+		new CssMinimizerPlugin()
     ]
   },
 
-  plugins: plugins(argv),
-
-  externals: {
-    jquery: "jQuery"
-  }
+	plugins: plugins(argv),
+  
 });

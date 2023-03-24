@@ -1,3 +1,21 @@
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-.35rem);
+		-ms-transform:     translateY(-.35rem);
+		transform:         translateY(-.35rem)
+	}
+	60% {
+		-webkit-transform: translateY(-.15rem);
+		-ms-transform:     translateY(-.15rem);
+		transform:        	translateY(-.15rem);
+	}
+}
+
 .actions{
 	margin-top: 1rem;
 	display: flex;
@@ -6,33 +24,68 @@
 		&:first-child{
 			margin-left: 0
 		}
+		margin-bottom: 1rem;
 	}
 }
 
 .button{
-	background-color: $text-color;
+	font-family: $font-family-sans;
+	background-color: $purple--dark;
 	color: $white;
 	text-decoration: none;
-	font-size: 1.25rem;
+	font-size: 1rem;
 	padding: .75rem 1.5rem;
 	border-radius: 900rem;
 	margin: 0 .4rem;
-	font-weight: 600;
+	font-weight: 700;
 	position: relative;
 	display: flex;
 	align-items: center;
+	position: relative;
+	transition: all .2s ease-in-out;
+	-webkit-animation-duration: .25s;
+	animation-duration: .25s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+	-webkit-animation-iteration-count: 1;
+	svg{
+		font-size: 1.25rem;
+		margin-left: .5rem;
+		color: $pink;
+	}
 	&:after{
 		display: none;
 		content: "\f105";
 		font-family: "Font Awesome 5 Free"; 
 		font-weight: 900;
 	}
-	svg{
-		font-size: 1.25rem;
-		margin-left: .5rem;
+	&:hover{
+		color: $white;
+			cursor: pointer;
+			animation-name: bounce;
+			-moz-animation-name: bounce;
 	}
 	&.button--secondary{
 		background-color: transparent;
 		color: $text-color;
+	}
+	&.button--file{
+		svg{
+			margin-right: .5rem;
+			margin-left: 0;
+		}
+		&:before{
+			content: "\f15c";
+			font-family: "Font Awesome 5 Free"; 
+			font-weight: 900;
+			display: none;
+		}
+		&:after{
+			display: none;
+			content: '';
+		}
 	}
 }

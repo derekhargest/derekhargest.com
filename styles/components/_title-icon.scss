@@ -1,0 +1,14 @@
+.title-icon{
+	width: 6rem;
+	height: 6rem;
+	background: $pink;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	svg{
+		color: $white;
+		font-size: 3rem;
+		filter: drop-shadow(3px 5px 5px rgb(150 0 87 / .4 ));
+	}
+}
