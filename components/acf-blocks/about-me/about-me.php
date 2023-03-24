@@ -19,7 +19,7 @@ $image = get_field('about_me_image');
 		</div>
 		<div class="about-me__content">
 			<div class="about-me__text">
-				<p>Throughout my career,s in the Baltimore area to implement
+				<p>Throughout my career, I have been trusted by various agencies in the Baltimore area to implement
 					efficient processes and workflows. My componentized approach to web development ensures that the
 					projects I work on are scalable, maintainable, and tailored to the specific needs of my clients.</p>
 				<p>As a seasoned developer, my skillset encompasses a variety of content management systems such as
