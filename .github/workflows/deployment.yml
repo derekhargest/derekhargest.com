@@ -21,11 +21,11 @@ jobs:
           .github/workflows/build.sh
 
     - name: Deploy to Raspberry Pi
-      uses: appleboy/scp-action@v0.1.1
+      uses: appleboy/scp-action@v0.1.3
       with:
         host: ${{ secrets.RASPBERRY_PI_HOST }}
         username: ${{ secrets.RASPBERRY_PI_USERNAME }}
         password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
-        source: "./"
+        source: "/"
         target: "/var/www/wp-content/themes/groundlevel/"
         debug: true
