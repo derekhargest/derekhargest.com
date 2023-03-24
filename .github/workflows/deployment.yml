@@ -1,36 +1,36 @@
-name: Deployment
+name: Deploy to Raspberry Pi
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-    - uses: actions/setup-node@v2
+    - name: Deploy to Raspberry Pi
+      uses: appleboy/ssh-action@master
       with:
-        node-version: 14.x
-
-    - name: Install dependencies
-      run: |
-        npm install
-    - name: Build
-      run: npm run prod
-    
-    - name: Sync
-      env:
-        dest: 'github@derekhargest.com:~/var/www/wp-content/themes/groundlevel'
-      run: |
-        echo "${{secrets.DEPLOY_KEY}}" > deploy_key
-        chmod 600 ./deploy_key
-        rsync -chav --delete \
-          -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
-          --exclude /deploy_key \
-          --exclude /.git/ \
-          --exclude /.github/ \
-          --exclude /node_modules/ \
-          ./ ${{env.dest}}
+        host: ${{ secrets.RASPBERRY_PI_IP }}
+        username: ${{ secrets.RASPBERRY_PI_USERNAME }}
+        key: ${{ secrets.RASPBERRY_PI_PRIVATE_KEY }}
+        script: |
+          cd /var/www/wp-content/themes/groundlevel
+          git fetch --all
+          git reset --hard origin/main
+          # Install Node.js if needed
+          if ! command -v node &> /dev/null; then
+            curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+          fi
+          # Install project dependencies
+          npm ci
+          # Build the project for production
+          npm run prod
+          # Restart Apache (if necessary)
+          sudo systemctl restart apache2
