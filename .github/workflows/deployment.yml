@@ -13,16 +13,23 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '15'
+    - name: Install NVM
+      run: |
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+    - name: Set up Node.js 15
+      run: nvm install 15 && nvm use 15
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci
 
     - name: Build production assets
       run: npm run prod
+
+    - name: List files in theme directory
+      run: ls -la wp-content/themes/groundlevel/
 
     - name: Deploy to Raspberry Pi
       uses: appleboy/scp-action@v0.1.1
@@ -30,5 +37,5 @@ jobs:
         host: ${{ secrets.RASPBERRY_PI_HOST }}
         username: ${{ secrets.RASPBERRY_PI_USERNAME }}
         password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
-        source: "/"
+        source: "./"
         target: "/var/www/wp-content/themes/groundlevel/"
