@@ -2,7 +2,7 @@ name: Deployment
 
 on:
   push:
-    branches: [ production ]
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -23,7 +23,7 @@ jobs:
     
     - name: Sync
       env:
-        dest: 'ssh-w01a4f90@w01a4f90.kasserver.com:/www/htdocs/w01a4f90/github-actions-wordpress-theme-deployment.blee.ch/wp-content/themes/flynt'
+        dest: 'derek@derekhargest.com:/var/www/wp-content/themes/groundlevel'
       run: |
         echo "${{secrets.DEPLOY_KEY}}" > deploy_key
         chmod 600 ./deploy_key
