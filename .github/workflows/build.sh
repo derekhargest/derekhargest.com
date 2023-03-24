@@ -16,5 +16,3 @@ npm install
 
 echo "Building Theme"
 npm run prod
-
-sudo chown -R ${{ secrets.RASPBERRY_PI_USERNAME }}:${{ secrets.RASPBERRY_PI_USERNAME }} .
