@@ -1,87 +1,263 @@
-.hero{
-	min-height: 100vh;
+.hero {
+    min-height: 100vh;
+    display: flex;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__content {
+        max-width: 76rem;
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: -.05em;
+            font-weight: 600;
+            color: $pink;
+            font-family: $font-family-sans;
+            line-height: 1;
+            margin-bottom: 1rem;
+
+            @media screen and (min-width: 740px) {
+                font-size: 5rem;
+            }
+
+            span {
+                color: $text-color;
+            }
+        }
+    }
+
+    &__title {
+        max-width: 38rem;
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (min-width: 1061px) {
+            order: 1;
+        }
+
+        @media screen and (min-width: 740px) {
+            align-items: flex-start;
+        }
+
+        h1,
+        p {
+            text-align: center;
+
+            @media screen and (min-width: 740px) {
+                text-align: left;
+            }
+        }
+
+        p {
+            max-width: 20rem;
+
+            @media screen and (min-width: 740px) {
+                max-width: none;
+            }
+        }
+
+        .actions {
+            flex-direction: column;
+            align-items: center;
+
+            @media screen and (min-width: 740px) {
+                flex-direction: row;
+            }
+        }
+    }
+
+    &__title_image {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media screen and (min-width: 1061px) {
+            flex-direction: row;
+        }
+    }
+
+    &__image {
+        order: 1;
+        margin-bottom: 2rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        @media screen and (min-width: 1061px) {
+            order: 2;
+            margin-bottom: 0;
+        }
+
+        &:hover .corner {
+            opacity: 1;
+            transform: rotate(0deg) translateY(0%);
+        }
+
+        img {
+            width: 100%;
+            border-radius: 50%;
+            width: 16rem;
+            height: 16rem;
+            box-shadow: .85rem .85rem 0px #ff1ca0;
+
+            @media screen and (min-width: 1061px) {
+                width: 20rem;
+                height: 20rem;
+            }
+        }
+
+        .corner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-right: 50px solid white;
+            transform: rotate(45deg) translateY(-50%);
+            opacity: 1;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+    }
+}
+
+#chatbot-container {
+    min-height: 5rem;
+    margin-bottom: 1rem;
+}
+
+.icon-openai-svgrepo-com:before {
+    content: "\e900";
+}
+
+.ai-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+}
+
+.ai-icons{
 	display: flex;
-	&__container{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+	flex-direction: row;
+}
+
+.ai-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 6.75rem;
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+    background: #469f81;
+    left: -1rem;
+    padding-left: 1rem;
+    border-bottom-right-radius: 100rem;
+    border-top-right-radius: 100rem;
+
+    &.closed {
+        width: 0;
+        padding-left: 0;
+    }
+
+    &.active {
+        animation: expand 1s forwards;
+    }
+
+    &.close-animation {
+        animation-name: close;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+		align-items: flex-start;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .ai-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: .5rem;
+        min-width: 1.25rem;
+
+        svg {
+            font-size: 1.25rem;
+
+            path {
+                fill: #214b3d;
+            }
+        }
+
+        &:first-child {}
+
+        h4 {
+            font-size: .85rem;
+        }
+    }
+
+    .ai-button-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $text-color;
+    }
+}
+
+.ai-button-heading{
+	h4{
+		font-family: $font-family-display;
+		font-size: 1.15rem;
+		svg{
+			transform: scaleX(-1);
+			position: relative;
+			left: .75rem;
+			bottom: .5rem;
+			margin-right: .45rem;
+			margin-top: 1rem;
+		}
+
 	}
-	&__content{
-		max-width: 76rem;
-		h1{
-			font-size: 3rem;
-			letter-spacing: -.05em;
-			font-weight: 600;
-			color: $pink;
-			font-family: $font-family-sans;
-			line-height: 1;
-			margin-bottom: 1rem;
-			@media screen and (min-width: 740px) {
-				font-size: 5rem;
-			}
-			span{
-				color: $text-color;
-			}
-		}
-	}
-	&__title{
-		max-width: 38rem;
-		order: 2;
-		@media screen and (min-width: 1061px) {
-			order: 1;
-		}
-		.actions{
-			margin-top: 2rem;
-			flex-direction: column;
-			align-items: center;
-			@media screen and (min-width: 1061px) {
-				flex-direction: row;
-			}
-		}
-	}
-	&__title_image{
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		@media screen and (min-width: 1061px) {
-			flex-direction: row;
-		  }
-	}
-	&__image{
-		order: 1;
-		margin-bottom: 2rem;
-		position: relative;
-		@media screen and (min-width: 1061px) {
-			order: 2;
-			margin-bottom: 0;
-		}
-		&:hover .corner{
-				opacity: 1;
-				transform: rotate(0deg) translateY(0%);
-		}
-		img{
-			width: 100%;
-			border-radius: 50%;
-			width: 16rem;
-			height: 16rem;
-			box-shadow: .85rem .85rem 0px #ff1ca0;
-			@media screen and (min-width: 1061px) {
-				width: 20rem;
-				height: 20rem;
-			}
-		}
-		.corner {
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 0;
-			height: 0;
-			border-top: 50px solid transparent;
-			border-right: 50px solid white;
-			transform: rotate(45deg) translateY(-50%);
-			opacity: 1;
-			transition: opacity 0.3s, transform 0.3s;
-		  }
-	}
+}
+
+#open_ai_button {
+    width: 2.25rem;
+    height: 2.25rem;
+    background: #469f81;
+    padding: .25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+
+    svg {
+        fill: $white;
+        width: 1.5rem;
+    }
+}
+
+@keyframes expand {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: auto;
+    }
 }

@@ -5,10 +5,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const cssnano = require("cssnano"); // https://cssnano.co/
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin"); // https://webpack.js.org/plugins/copy-webpack-plugin/
 const DependencyExtractionWebpackPlugin = require("@wordpress/dependency-extraction-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const glob_entries = require("webpack-glob-folder-entries");
@@ -35,8 +32,9 @@ const output = {
 };
 
 const entries = {
-  index: "./js/index.js",
-  styles: "./styles/styles.scss"
+  	index: "./js/index.js",
+	styles: "./styles/styles.scss",
+  	ai: "./js/ai.js"
 };
 
 // Add Component entries to the entries object

@@ -34,4 +34,15 @@ const inViewport = (elem) => {
 
 inViewport('component');  //  run the function on all section elements
 
+const div = document.querySelector('.ai-buttons');
+
+// when a link with the id of open_ai_button is clicked, toggle the active class ON THE .AI-BUTTONS DIV
+	
+	document.getElementById('open_ai_button').addEventListener('click', function (e) {
+		e.preventDefault();
+		div.classList.toggle('closed');
+	}	
+	);
+		
+
 });

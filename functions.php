@@ -28,11 +28,11 @@ function gl_block_render_template_assets($name, $directory = '')
 	}
 
 	$css_relative_path = "/dist/styles/{$name}.css";
-	$js_relative_path = "/dist/js	/{$name}.min.js";
+	$js_relative_path = "/dist/js/{$name}.min.js";
 
 	if (file_exists(get_theme_file_path($relative_path))) {
 		wp_enqueue_style($name, get_stylesheet_directory_uri() . $css_relative_path, array(), null);
-		wp_enqueue_script($name, get_stylesheet_directory_uri() . $js_relative_path, array(), null, true);
+		wp_enqueue_script($name, get_stylesheet_directory_uri() . $js_relative_path, array(), null);
 		return get_theme_file_path($relative_path);
 	}
 

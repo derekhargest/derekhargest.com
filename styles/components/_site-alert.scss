@@ -24,7 +24,7 @@
 	background: $purple--light;
 	border-radius: 100rem;
 	width: 15rem;
-	box-shadow: 0.5rem 0.5rem 0px $purple--dark;
+	box-shadow: 0.35rem 0.35rem 0px $purple--dark;
 	text-decoration: none;
 	&:hover svg{
 		animation: tilt-shaking 0.15s 3;
@@ -38,12 +38,12 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 3.5rem;
-		height: 3.5rem;
+		width: 2.5rem;
+		height: 2.5rem;
 		background: $green;
 		border-radius: 50%;
 		color: $white;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		border: .1rem solid #61c400;
 	}
 	&__content{

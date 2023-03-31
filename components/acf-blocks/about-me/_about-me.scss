@@ -36,7 +36,7 @@
 		
 	}
 	&__text{
-		max-width: 38rem;
+		max-width: 28rem;
 		.actions{
 			margin-top: 2rem;
 		}
@@ -48,6 +48,7 @@
 		margin-left: 1rem;
 		width: 21rem;
 		overflow: hidden;
+		margin-top: 5rem;
 		&:before{
 			transform: rotate(6deg);
 			height: 20%;
@@ -58,8 +59,11 @@
 		}
 		@media screen and (min-width: 1061px) {
 			position: absolute;
-			top: 14rem;
-			right: 0rem;
+			right: 5rem;
+			top: 6rem;
+			margin-top: 0;
+		}
+		@media screen and (min-width: 1061px) {
 		}
 		img{
 			object-fit: cover;
@@ -208,3 +212,17 @@
 		margin-top: 1rem;
 	}
 }
+
+.typing {
+	display: inline-block;
+	animation: typing 0.5s steps(10, end) 1s forwards;
+  }
+  
+  @keyframes typing {
+	from {
+	  width: 0;
+	}
+	to {
+	  width: 100%;
+	}
+  }

@@ -3,6 +3,7 @@
 function groundlevel_load_scripts() {
 	wp_enqueue_style( 'theme-css', get_template_directory_uri() . '/dist/styles/styles.css', false, null );
 	wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/dist/js/index.min.js', null, true );
+	// wp_enqueue_script( 'ai-js', get_template_directory_uri() . '/dist/js/ai.min.js', null, true );
 }
 
 add_action(
