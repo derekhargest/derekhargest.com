@@ -1,6 +1,7 @@
 const chatbotContainer = document.getElementById("chatbot-container");
 const dj_button = document.getElementById("dj_button");
 const pirate_button = document.getElementById("pirate_button");
+const king_button = document.getElementById("king_button");
 let isFirstLoad = true;
 
 const typeText = async (text, container, delay) => {
@@ -52,17 +53,6 @@ const fetchChatbotResponse = async (message) => {
   }
 };
 
-
-
-// Get initial chatbot response on page load
-// fetchChatbotResponse({
-//   role: "user",
-//   content:
-//     "Create a short intro sentence to intro my website on the home page. Encapsulate all that I have to offer in this one intro. Make it very short. No longer than 2 sentences. Speak in first person."
-// });
-
-// Add event listener to button to get new chatbot response
-// Add event listener to button to get new chatbot response
 pirate_button.addEventListener("click", (e) => {
 	e.preventDefault();
 	const newMessage = {
@@ -74,7 +64,7 @@ pirate_button.addEventListener("click", (e) => {
 	chatbotContainer.innerHTML = "";
 	fetchChatbotResponse(newMessage);
 	// Toggle glow effect
-	toggleGlow(pirate_button, dj_button);
+	toggleGlow(pirate_button, dj_button, king_button); // Include king_button here
   });
   
   // Add event listener to button to get new chatbot response
@@ -89,6 +79,19 @@ pirate_button.addEventListener("click", (e) => {
 	chatbotContainer.innerHTML = "";
 	fetchChatbotResponse(newMessage);
 	// Toggle glow effect
-	toggleGlow(dj_button, pirate_button);
+	toggleGlow(dj_button, pirate_button, king_button); // Include king_button here
   });
   
+  king_button.addEventListener("click", (e) => {
+	e.preventDefault();
+	const newMessage = {
+	  role: "user",
+	  content:
+		"Speak like a king from a shakespeare play. dont be afraid to make no sense. lots of ole timey talk. Make it 2 sentences."
+	};
+	// Clear chatbot-container
+	chatbotContainer.innerHTML = "";
+	fetchChatbotResponse(newMessage);
+	// Toggle glow effect
+	toggleGlow(king_button, dj_button, pirate_button); // Updated order
+  });

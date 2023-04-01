@@ -19,25 +19,24 @@ $image = get_field('about_me_image');
 		</div>
 		<div class="about-me__content">
 			<div class="about-me__text">
-				<p>Throughout my career, I have been trusted by various agencies in the Baltimore area to implement
-					efficient processes and workflows. My componentized approach to web development ensures that the
-					projects I work on are scalable, maintainable, and tailored to the specific needs of my clients.</p>
-				<p>As a seasoned developer, my skillset encompasses a variety of content management systems such as
-					WordPress, Shopify, and Concrete5. My experience extends beyond web development and includes
-					management
-					roles, providing me with a strong understanding of business objectives, which allows me to help my
-					clients achieve their goals and drive measurable results. When I'm not busy building websites, I
-					enjoy
-					restoring vintage furniture, attending sporting events in Baltimore, and spending quality time with
-					my
-					dog, Charlie.</p>
+				<p>As a seasoned web developer with over a decade of experience, I'm passionate about crafting
+					customized, component-based websites that drive business success. I pride myself on my ability to
+					merge innovative technology and strategic marketing, creating powerful digital solutions tailored to
+					your unique needs. Throughout my career, I've honed my skills in various areas, including Shopify
+					and WordPress development, e-commerce solutions, and client education.</p>
+
+				<p>When I'm not busy building impactful online presences, you can find me cheering on my beloved
+					Baltimore sports teams or spending quality time with my loyal companion, Charlie. My personal
+					interests and dedication to my craft provide me with the motivation and inspiration to continuously
+					refine my expertise and deliver top-notch web solutions. Let's collaborate to bring your vision to
+					life and elevate your digital presence to new heights.</p>
 				<div class="actions">
 					<a href="/resume" class="button button--primary button--file">
 						Download Resume
 					</a>
 				</div>
 			</div>
-			<div class="about-me__image">
+			<!-- <div class="about-me__image">
 				<?php
 				if (!empty($image)):
 					?>
@@ -45,7 +44,7 @@ $image = get_field('about_me_image');
 					<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 
 				<?php endif; ?>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>

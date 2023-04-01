@@ -80,9 +80,14 @@
         justify-content: space-between;
 
         @media screen and (min-width: 1061px) {
-            flex-direction: row;
+            flex-direction: row-reverse;
         }
     }
+
+	&__image__buttons{
+		position: relative;
+		top: -1rem;
+	}
 
     &__image {
         order: 1;
@@ -134,10 +139,6 @@
     margin-bottom: 1rem;
 }
 
-.icon-openai-svgrepo-com:before {
-    content: "\e900";
-}
-
 .ai-wrapper {
     display: flex;
     flex-direction: row-reverse;
@@ -152,7 +153,7 @@
 .ai-buttons {
     display: flex;
     flex-direction: row;
-    width: 6.75rem;
+    width: 8.75rem;
     position: relative;
     align-items: center;
     overflow: hidden;
@@ -185,9 +186,6 @@
         justify-content: center;
 		align-items: flex-start;
         overflow: hidden;
-        position: absolute;
-        left: 0;
-        top: 0;
     }
 
     .ai-button {
@@ -224,10 +222,11 @@
 	h4{
 		font-family: $font-family-display;
 		font-size: 1.15rem;
+		text-align: center;
 		svg{
 			transform: scaleX(-1);
 			position: relative;
-			left: .75rem;
+			left: .65rem;
 			bottom: .5rem;
 			margin-right: .45rem;
 			margin-top: 1rem;
