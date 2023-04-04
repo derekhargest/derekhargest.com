@@ -8,9 +8,10 @@
     	justify-content: center;
 		align-items: center;
 		position: relative;
-		flex-direction: row;
+		flex-direction: column;
 		@media screen and (min-width: 1061px) {
 			align-items: flex-start;
+			flex-direction: row;
 		}
 	}
 	&__content{
@@ -19,11 +20,19 @@
     	flex: 1;
 		padding-right: 1rem;
 		box-sizing: border-box;
+		max-width: 33rem;
+		@media screen and (min-width: 1061px) {
+			max-width: none;
+		}
 	}
 	&__info{
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		justify-content: center;
+		@media screen and (min-width: 1061px) {
+			justify-content: flex-start;
+		}
 
 	}
 	&__subtitle{
@@ -34,11 +43,17 @@
 		}
 	}
 	&__title{
-		
+		h2{
+			text-align: center;
+		}
 	}
 	&__text{
 		p{
 			font-size: 1rem;
+			text-align: center;
+			@media screen and (min-width: 1061px) {
+				text-align: left;
+			}
 		}
 		.actions{
 			margin-top: 2rem;

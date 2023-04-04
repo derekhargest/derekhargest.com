@@ -66,3 +66,30 @@ function glv_register_custom_block_styles()
 	}
 }
 add_action('init', 'glv_register_custom_block_styles');
+
+function glv_custom_title($title, $sep, $seplocation)
+{
+	global $page, $paged;
+
+	// Site name
+	$site_name = get_bloginfo('name');
+
+	// Site description
+	$site_description = get_bloginfo('description');
+
+	// Add the site name
+	$title = $site_name . ' ' . $title;
+
+	// Add the site description for the home/front page
+	if (is_home() || is_front_page()) {
+		$title .= " $sep $site_description";
+	}
+
+	// Add a page number if necessary
+	if (($paged >= 2 || $page >= 2) && !is_404()) {
+		$title .= " $sep " . sprintf(__('Page %s', 'mytheme'), max($paged, $page));
+	}
+
+	return $title;
+}
+add_filter('wp_title', 'glv_custom_title', 10, 3);

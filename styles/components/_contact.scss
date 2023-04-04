@@ -1,6 +1,6 @@
 
 .contact{
-	scroll-snap-align: end !important;
+	scroll-snap-align: unset;
 	background: $purple--dark;
 	min-height: 100vh;
 	display: flex;
@@ -43,8 +43,12 @@
 	&__info{
 		margin-top: 4rem;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: 1fr;
 		grid-gap: 1.5rem;
+		margin-bottom: 2rem;
+		@media screen and (min-width: 1061px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
 		.contact__info__item{
 			display: flex;
 			flex-direction: column;

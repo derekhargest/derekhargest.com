@@ -20,6 +20,10 @@
 	margin-top: 1rem;
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
+	@media screen and (min-width: 1061px) {
+		justify-content: flex-start;
+	}
 	.button{
 		&:first-child{
 			margin-left: 0
