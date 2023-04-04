@@ -6,6 +6,8 @@
 @import 'utilities/utility';
 @import 'layout/containers';
 @import 'base/base';
+@import 'slick-carousel/slick/slick';
+@import 'slick-carousel/slick/slick-theme.css';
 @import 'base/fonts';
 @import 'base/typography';
 @import 'components/buttons';
@@ -15,3 +17,5 @@
 @import 'components/section-heading';
 @import 'components/forms';
 @import 'components/site-alert';
+@import 'components/testimonials';
+@import 'components/contact';

@@ -1,29 +1,30 @@
 .about-me{
-	display: flex;
 	padding: 6rem 0;
 	background: $purple--light;
 	min-height: 100vh;
-	&__container{
+	display: flex;
+	align-items: center;
+	&__container.container{
     	justify-content: center;
 		align-items: center;
 		position: relative;
+		flex-direction: row;
 		@media screen and (min-width: 1061px) {
 			align-items: flex-start;
 		}
+	}
+	&__content{
+		display: flex;
+    	flex-direction: column;
+    	flex: 1;
+		padding-right: 1rem;
+		box-sizing: border-box;
 	}
 	&__info{
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 
-	}
-	&__content{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		@media screen and (min-width: 1061px) {
-			flex-direction: row;
-		}
 	}
 	&__subtitle{
 		position: relative;
@@ -36,6 +37,9 @@
 		
 	}
 	&__text{
+		p{
+			font-size: 1rem;
+		}
 		.actions{
 			margin-top: 2rem;
 		}
@@ -69,159 +73,11 @@
 			height: 100%;
 		}
 	}
-}
-
-.resume{
-	&__content{
-		box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
-		padding: 2rem 2rem;
-		&:before{
-			transform: rotate(6deg);
-			height: 20%;
-			width: 47%;
-			bottom: 30px;
-			right: 12px;
-			box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
-		}
-	}
-	&__intro{
-
-	}
-}
-
-.contact{
-	scroll-snap-align: end !important;
-	background: $purple--dark;
-	min-height: 100vh;
-	display: flex;
-	padding: 6rem 0;
-	p, h2, svg{
-		color: $white;
-	}
-	.gform_heading{
-		margin-bottom: 2rem;
-		h2{
-			font-size: 1.6rem;
-			text-align: center;
-		}
-	}
-	&__container{
-		justify-content: center;
-	}
-	&__content{
+	&__testimonials{
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-
-	}
-	&__heading{
-		svg path{
-			fill: $white;
-		}
-	}
-	&__intro{
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: center;
-		max-width: 51rem;
-		h2, p{
-			text-align: center;
-		}
-	}
-	&__info{
-		margin-top: 4rem;
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-gap: 1.5rem;
-		.contact__info__item{
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			margin-bottom: 1rem;
-			padding: 1rem 3rem;
-			text-decoration: none;
-			border-radius: 1rem;
-			background: rgba( $white, .15 );
-			transition: background .187s ease-in-out;
-			svg{
-				font-size: 2rem;
-			}
-			&:hover{
-				background:  rgba( $pink, .35 );
-			}
-		}
-		.contact__info__text{
-			p{
-				font-family: $font-family-sans;
-				font-size: .85rem;
-				margin: .5rem 0;
-			}
-		}
-		.contact__info__icon{
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 3rem;
-		}
-	}
-	&__form{
-		width: 100%;
-		max-width: 51rem;
-		margin-top: .5rem;
-		padding: 5rem 2rem;
-		background: rgba( $white, .15 );
-		border-radius: 1rem;
-		form{
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
-	}
-	.contact__form__container{
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		max-width: 39rem;
-	}
-	.contact__form__info{
-		margin-right: .5rem;
-		p{
-			display: flex;
-			flex-direction: column;
-		}
-		p label{
-			width: 100%;
-		}
-	}
-	.contact__form__message{
-		width: 57%;
-		margin-left: .5rem;
-		textarea{
-			height: 170px;
-			width: 100%;
-		}
-		
-	}
-	.contact__form__actions{
-		margin-top: 1rem;
+		flex: 1;
+		padding-top: 5rem;
+		width: 20rem;
 	}
 }
-
-.typing {
-	display: inline-block;
-	animation: typing 0.5s steps(10, end) 1s forwards;
-  }
-  
-  @keyframes typing {
-	from {
-	  width: 0;
-	}
-	to {
-	  width: 100%;
-	}
-  }

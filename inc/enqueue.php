@@ -9,7 +9,7 @@ function groundlevel_load_scripts() {
 add_action(
 	'wp_enqueue_scripts',
 	'groundlevel_load_scripts',
-	100
+	20
 );
 
 function enqueue_acf_component_assets($field) {

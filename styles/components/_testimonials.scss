@@ -1,0 +1,91 @@
+
+.testimonials{
+	display: flex;
+	flex-direction: column;
+	&__info{
+		display: flex;
+		justify-content: center;
+		.section-heading{
+			margin-bottom: 0;
+		h2{
+			font-size: 1.25rem;
+			text-align: center;
+			font-weight: 700;
+			margin-bottom: 0;
+			font-style: italic;
+		}
+	}
+	}
+	.slick-slide{
+		margin: 0 1rem;
+	}
+	.slick-dots{
+		width: 10rem;
+		right: 2.5rem;
+		bottom: 2rem;
+		li{
+			button:before{
+				font-size: .85rem;
+				color: $purple--dark;
+			}
+		}
+
+	}
+	.testimonial{
+		position: relative;
+		width: 28.5rem;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+		&::after{
+			content: "\f27a";
+			font-family: "Font Awesome 5 Free"; 
+			font-weight: 900;
+			display: none;
+		}
+		&:nth-child(2){
+			align-self: end;
+			position: relative;
+			top: 6rem;
+			svg{
+				transform: scaleX(-1);
+				filter: drop-shadow(-.85rem .85rem 0px rgb(49 21 81 / 0.95));
+			}
+		} 
+		svg{
+			position: absolute;
+			font-size: 21rem;
+			color: $white;
+			width: 100%;
+			filter: drop-shadow(.85rem .85rem 0px rgb(0 0 0 / 0.4));
+		}
+		&__text{
+			height: 23rem;
+			position: relative;
+			z-index: 2;
+			width: 15rem;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			top: -1.6125rem;
+			p{
+				font-size: 1rem;
+				font-family: $font-family-sans;
+				span{
+					font-weight: 600;
+				}
+			}
+		}
+		&__author{
+			text-align: right;
+			p{
+				margin-bottom: 0;
+				font-size: 1rem;
+				font-family: $font-family-sans;
+				font-weight: 600;
+			}
+		}
+	}
+}

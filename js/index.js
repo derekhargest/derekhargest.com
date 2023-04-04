@@ -1,18 +1,28 @@
+import $ from 'jquery';
+
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import { Accordion } from 'bootstrap';
-import { library, dom, config } from '@fortawesome/fontawesome-svg-core';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { dom, config } from '@fortawesome/fontawesome-svg-core';
+import 'slick-carousel';
 
-library.add(faAngleRight);
 dom.watch();
 config.searchPseudoElements = true;
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Select the element you want to toggle the class on
-//  https://github.com/piersrueb/inViewport
+
+	if($('.testimonials').length>0){
+		$('.testimonials').slick({
+		  infinite: true,
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		  arrows: false,
+			adaptiveHeight: false,
+		  dots: true
+		});
+	  }
 
 const inViewport = (elem) => {
 	let allElements = document.getElementsByClassName(elem);
@@ -43,6 +53,5 @@ const div = document.querySelector('.ai-buttons');
 		div.classList.toggle('closed');
 	}	
 	);
-		
 
 });

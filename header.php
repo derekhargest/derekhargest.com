@@ -23,11 +23,6 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	<link rel="stylesheet" href="https://use.typekit.net/jha4bbm.css">
 	<noscript>
-		<style>
-			body {
-				opacity: 1;
-			}
-		</style>
 	</noscript>
 	<script>
 		window.FontAwesomeConfig = {
@@ -39,7 +34,6 @@
 
 <body <?php body_class(); ?>>
 	<div class="site-header">
-		<div class="container site-header__container">
 			<div class="site-header__inner">
 				<div class="site-header__logo">
 					<a href="<?php echo esc_url(site_url()); ?>">
@@ -60,6 +54,5 @@
 					?>
 				</div>
 			</div>
-		</div>
 	</div>
 				

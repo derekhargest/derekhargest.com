@@ -1,0 +1,123 @@
+
+.contact{
+	scroll-snap-align: end !important;
+	background: $purple--dark;
+	min-height: 100vh;
+	display: flex;
+	padding: 6rem 0;
+	p, h2, svg{
+		color: $white;
+	}
+	.gform_heading{
+		margin-bottom: 2rem;
+		h2{
+			font-size: 1.6rem;
+			text-align: center;
+		}
+	}
+	&__container{
+		justify-content: center;
+	}
+	&__content{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+	}
+	&__heading{
+		svg path{
+			fill: $white;
+		}
+	}
+	&__intro{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		max-width: 51rem;
+		h2, p{
+			text-align: center;
+		}
+	}
+	&__info{
+		margin-top: 4rem;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 1.5rem;
+		.contact__info__item{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 1rem;
+			padding: 1rem 3rem;
+			text-decoration: none;
+			border-radius: 1rem;
+			background: rgba( $white, .15 );
+			transition: background .187s ease-in-out;
+			svg{
+				font-size: 2rem;
+			}
+			&:hover{
+				background:  rgba( $pink, .35 );
+			}
+		}
+		.contact__info__text{
+			p{
+				font-family: $font-family-sans;
+				font-size: .85rem;
+				margin: .5rem 0;
+			}
+		}
+		.contact__info__icon{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 3rem;
+		}
+	}
+	&__form{
+		width: 100%;
+		max-width: 51rem;
+		margin-top: .5rem;
+		padding: 5rem 2rem;
+		background: rgba( $white, .15 );
+		border-radius: 1rem;
+		form{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	.contact__form__container{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		max-width: 39rem;
+	}
+	.contact__form__info{
+		margin-right: .5rem;
+		p{
+			display: flex;
+			flex-direction: column;
+		}
+		p label{
+			width: 100%;
+		}
+	}
+	.contact__form__message{
+		width: 57%;
+		margin-left: .5rem;
+		textarea{
+			height: 170px;
+			width: 100%;
+		}
+		
+	}
+	.contact__form__actions{
+		margin-top: 1rem;
+	}
+}

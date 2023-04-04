@@ -53,6 +53,8 @@ const fetchChatbotResponse = async (message) => {
   }
 };
 
+
+
 pirate_button.addEventListener("click", (e) => {
 	e.preventDefault();
 	const newMessage = {

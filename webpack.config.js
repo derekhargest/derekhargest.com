@@ -112,17 +112,28 @@ const rules = [
     use: "babel-loader"
   },
   {
-    test: /\.scss$/,
-    exclude: /node_modules/,
-	  use: [MiniCssExtractPlugin.loader, "css-loader", {
-		  loader: "sass-loader",
-		  options: {
-			  additionalData: `@import "styles/utilities/_variables.scss";`,
-			  sassOptions: {
-                includePaths: [nodeModulesPath],
-              }
-		  },
-	  }],
+    test: /\.css$/,
+    use: [
+      MiniCssExtractPlugin.loader,
+      "css-loader",
+    ],
+  },
+  {
+    test: /\.s[ac]ss$/,
+    use: [
+      MiniCssExtractPlugin.loader,
+      "css-loader",
+      {
+        loader: "sass-loader",
+        options: {
+          additionalData: `@import "styles/utilities/_variables.scss";`,
+          sassOptions: {
+            includePaths: [nodeModulesPath],
+            webpackImporter: false,
+          },
+        },
+      },
+    ],
   },
   {
     test: /\.(png|jpg|svg|jpeg|gif|ico)$/,

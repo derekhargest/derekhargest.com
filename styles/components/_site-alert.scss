@@ -26,6 +26,7 @@
 	width: 15rem;
 	box-shadow: 0.35rem 0.35rem 0px $purple--dark;
 	text-decoration: none;
+	border: .1rem solid $white;
 	&:hover svg{
 		animation: tilt-shaking 0.15s 3;
 	}

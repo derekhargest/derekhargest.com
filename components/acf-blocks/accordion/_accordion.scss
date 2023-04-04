@@ -4,14 +4,17 @@
 	align-items: center;
 	background: $gray--light;
 	padding: 6rem 0;
-	&__container{
+	&__container.container{
 		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 	}
 	&__accordion{
-		position: absolute;
-		right: 0;
 		width: 100%;
-		max-width: 36rem;
+		max-width: 28rem;
+	}
+	&__heading{
+		margin-bottom: 1rem;
 	}
 	&-button{
 		&:hover{
@@ -19,7 +22,9 @@
 		}
 	}
 	&__intro{
-		width: 37%;
+		text-align: center;
+		max-width: 33rem;
+		margin-bottom: 1rem;
 	}
 	&-item{
 		margin-bottom: .5rem;

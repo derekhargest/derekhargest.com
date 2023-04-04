@@ -266,3 +266,18 @@
         width: auto;
     }
 }
+
+
+.typing {
+	display: inline-block;
+	animation: typing 0.5s steps(10, end) 1s forwards;
+  }
+  
+  @keyframes typing {
+	from {
+	  width: 0;
+	}
+	to {
+	  width: 100%;
+	}
+  }

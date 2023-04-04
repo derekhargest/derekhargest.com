@@ -22,13 +22,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	<link rel="stylesheet" href="https://use.typekit.net/jha4bbm.css">
-	<noscript>
-		<style>
-			body {
-				opacity: 1;
-			}
-		</style>
-	</noscript>
 	<script>
 		window.FontAwesomeConfig = {
 			searchPseudoElements: true
@@ -38,15 +31,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<!-- <div class="site-header">
-		<div class="container site-header__container">
+	<div class="site-header">
 			<div class="site-header__inner">
-				<div class="site-header__logo">
-					<a href="<?php echo esc_url(site_url()); ?>">
-						<?php get_template_part('template-parts/header', 'logo'); ?>
-					</a>
-				</div>
-				<!-- <div class="site-header__navigation">
+				<div class="site-header__navigation">
 				<?php
 					wp_nav_menu(
 						array(
@@ -60,7 +47,5 @@
 					?>
 				</div>
 			</div>
-		</div>
 	</div>
-				-->
 				

@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@accessible360/accessible-slick@^1.0.1":
+  "integrity" "sha512-fAdHKy0CLuApCHFgRs2zcQpzjEdlZUuJND1zIY8T5PiV8bB52gpomjCUFCZwCk9lb87WC0IJGIUaPD6RToocqA=="
+  "resolved" "https://registry.npmjs.org/@accessible360/accessible-slick/-/accessible-slick-1.0.1.tgz"
+  "version" "1.0.1"
+
 "@ampproject/remapping@^2.2.0":
   "integrity" "sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w=="
   "resolved" "https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.2.0.tgz"
@@ -6181,7 +6186,7 @@
     "merge-stream" "^2.0.0"
     "supports-color" "^8.0.0"
 
-"jquery@^3.6.4":
+"jquery@^3.6.4", "jquery@>=1.8.0":
   "integrity" "sha512-v28EW9DWDFpzcD9O5iyJXg3R3+q+mET5JhnjJzQUZMHOv67bpSIHq81GEYpPNZHG+XXHsfSme3nxp/hndKEcsQ=="
   "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.6.4.tgz"
   "version" "3.6.4"
@@ -8598,6 +8603,16 @@
     "astral-regex" "^2.0.0"
     "is-fullwidth-code-point" "^3.0.0"
 
+"slick-carousel@^1.8.1":
+  "integrity" "sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA=="
+  "resolved" "https://registry.npmjs.org/slick-carousel/-/slick-carousel-1.8.1.tgz"
+  "version" "1.8.1"
+
+"slick-slider@^1.8.2":
+  "integrity" "sha512-/NGT7QzlC1/LNu198ad+rM8xJcgSXgiptUPbY0oMmtZ/8K2G9s6mMpLo7um6FIIQ135vUjsnP2gWY5DKJe2qJw=="
+  "resolved" "https://registry.npmjs.org/slick-slider/-/slick-slider-1.8.2.tgz"
+  "version" "1.8.2"
+
 "snake-case@^3.0.4":
   "integrity" "sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg=="
   "resolved" "https://registry.npmjs.org/snake-case/-/snake-case-3.0.4.tgz"
@@ -8721,6 +8736,11 @@
     "jsbn" "~0.1.0"
     "safer-buffer" "^2.0.2"
     "tweetnacl" "~0.14.0"
+
+"ssr-window@^4.0.2":
+  "integrity" "sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ=="
+  "resolved" "https://registry.npmjs.org/ssr-window/-/ssr-window-4.0.2.tgz"
+  "version" "4.0.2"
 
 "ssri@^6.0.1":
   "integrity" "sha512-cepbSq/neFK7xB6A50KHN0xHDotYzq58wWCa5LeWqnPrHG8GzfEjO/4O8kpmcGW+oaxkvhEJCWgbgNk4/ZV93Q=="
@@ -9063,6 +9083,13 @@
     "csso" "^4.2.0"
     "picocolors" "^1.0.0"
     "stable" "^0.1.8"
+
+"swiper@^9.2.0":
+  "integrity" "sha512-lWK9toYumUQss+YuTL+Mt0+8twiMJEyzioER4bbS4rrGHlkeLrDM8uhtAmnpdijELrNscuNUujDgKoMQZfQGlQ=="
+  "resolved" "https://registry.npmjs.org/swiper/-/swiper-9.2.0.tgz"
+  "version" "9.2.0"
+  dependencies:
+    "ssr-window" "^4.0.2"
 
 "symbol-observable@1.0.1":
   "integrity" "sha512-Kb3PrPYz4HanVF1LVGuAdW6LoVgIwjUYJGzFe7NDrBLCN4lsV/5J0MFurV+ygS4bRVwrCEt2c7MQ1R2a72oJDw=="
