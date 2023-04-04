@@ -19,17 +19,9 @@ $image = get_field('about_me_image');
 		</div>
 		<div class="about-me__content">
 			<div class="about-me__text">
-				<p>As a seasoned web developer with over a decade of experience, I'm passionate about crafting
-					customized, component-based websites that drive business success. I pride myself on my ability to
-					merge innovative technology and strategic marketing, creating powerful digital solutions tailored to
-					your unique needs. Throughout my career, I've honed my skills in various areas, including Shopify
-					and WordPress development, e-commerce solutions, and client education.</p>
+			<p>Derek Hargest is a Senior Web Developer and Consultant with a decade of experience in the industry, specializing in crafting innovative and user-friendly web solutions. His expertise spans across various content management systems, including WordPress, Shopify, Magento, and Concrete 5. Proficient in HTML, CSS, PHP, JavaScript, Git, Node.js, Terminal, and GitHub Actions, Derek's technical acumen enables him to deliver cutting-edge websites that cater to a diverse range of client needs.</p>
 
-				<p>When I'm not busy building impactful online presences, you can find me cheering on my beloved
-					Baltimore sports teams or spending quality time with my loyal companion, Charlie. My personal
-					interests and dedication to my craft provide me with the motivation and inspiration to continuously
-					refine my expertise and deliver top-notch web solutions. Let's collaborate to bring your vision to
-					life and elevate your digital presence to new heights.</p>
+			<p>In addition to his development skills, Derek is passionate about helping small to mid-sized agencies optimize their development operations and workflows. His successful track record in consulting agencies on team organization, workflow management, and development processes showcases his commitment to fostering collaboration and driving organizational growth. With his natural leadership abilities and excellent soft skills, Derek is the go-to expert for agencies seeking to thrive in the digital landscape.</p>
 				<div class="actions">
 					<a href="/resume" class="button button--primary button--file">
 						Download Resume

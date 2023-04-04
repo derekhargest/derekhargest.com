@@ -27,5 +27,5 @@ jobs:
         username: ${{ secrets.RASPBERRY_PI_USERNAME }}
         password: ${{ secrets.RASPBERRY_PI_PASSWORD }}
         source: "./"
-        target: "/var/www/html/wp-content/themes/groundlevel/"
+        target: "/var/www/html/derekhargest/wp-content/themes/groundlevel/"
         debug: true

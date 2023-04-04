@@ -20,9 +20,7 @@ $hero_buttons = get_field('hero_buttons');
 					<h1>
 						<?php echo wp_kses_post($hero_heading) ?>
 					</h1>
-					<div id="chatbot-container">Hi, I'm Derek. your go-to web consultant and developer for all your
-						eCommerce and lead-generation needs. I build and maintain websites tailored to your
-						business, while streamlining operations to help you grow your brand.</div>
+					<div id="chatbot-container">Hi! I'm Derek. As a dedicated Senior Web Developer and Consultant, I specialize in creating innovative web solutions and streamlining development operations to help small to mid-sized agencies thrive in the digital world.</div>
 					<?php
 					if ($hero_buttons): ?>
 						<div class="actions">
